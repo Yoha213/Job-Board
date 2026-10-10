@@ -5,4 +5,5 @@ class Skill(Base):
 
     __tablename__ = "skills"
 
-    skill: Mapped[str] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    skill: Mapped[str] = mapped_column(unique=True, nullable=False)

@@ -11,12 +11,12 @@ class User(Base):
     __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    first_name: Mapped[str] = mapped_column(nullable=False)
-    last_name: Mapped[str] = mapped_column(nullable=False)
+    first_name: Mapped[str]
+    last_name: Mapped[str]
     username: Mapped[str] = mapped_column(unique=True, nullable=False)
     registered_email: Mapped[str] = mapped_column(unique=True, nullable=False)
     registered_phone: Mapped[str] = mapped_column(unique=True, nullable=False)
-    password: Mapped[str] = mapped_column(nullable=False)
+    password: Mapped[str]
     date_of_birth: Mapped[date | None]
     about: Mapped[str | None]
     profile_picture_url: Mapped[str | None]

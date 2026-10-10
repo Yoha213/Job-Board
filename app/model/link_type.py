@@ -5,4 +5,5 @@ class LinkType(Base):
 
     __tablename__ = "link_types"
 
-    link_type: Mapped[str] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    link_type: Mapped[str] = mapped_column(unique=True, nullable=False)
