@@ -1,8 +1,8 @@
-from database.base import Base
+from app.database.base import Base
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import ForeignKey
 
-class ComapanyCategory(Base):
+class CompanyCategory(Base):
 
     __tablename__ = "company_categories"
 

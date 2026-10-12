@@ -1,6 +1,7 @@
-from database.base import Base
+from app.database.base import Base
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import ForeignKey, CheckConstraint
+
 class Company(Base):
 
     __tablename__ = "companies"
@@ -13,7 +14,6 @@ class Company(Base):
     about: Mapped[str | None]
     founded_year: Mapped[int | None]
     profile_picture_url: Mapped[str | None]
-    primary_headquarter_id: Mapped[int] = mapped_column(ForeignKey("company_headquarters.id"))
     min_members: Mapped[int | None]
     max_members: Mapped[int | None]
 

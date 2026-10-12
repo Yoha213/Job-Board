@@ -2,11 +2,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
 
-    database_host: str
-    database_user: str
-    database_port: int
-    database_password: str
-    database_name: str
+    DATABASE_HOST: str
+    DATABASE_USER: str
+    DATABASE_PORT: int
+    DATABASE_PASSWORD: str
+    DATABASE_NAME: str
 
     model_config = SettingsConfigDict(env_file=".env")
 

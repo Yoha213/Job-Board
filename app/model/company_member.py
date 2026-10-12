@@ -1,7 +1,7 @@
-from database.base import Base
+from app.database.base import Base
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import ForeignKey, Enum as SQLEnum
-from enum.member_role import MemberRole
+from app.enum.member_role import MemberRole
 
 class CompanyMember(Base):
 
@@ -9,4 +9,4 @@ class CompanyMember(Base):
 
     company_id: Mapped[int] = mapped_column(ForeignKey("companies.id"), primary_key=True)
     member_id: Mapped[int] = mapped_column(ForeignKey("users.id"), primary_key=True)
-    role: Mapped[MemberRole] = mapped_column(SQLEnum(MemberRole), default=MemberRole.MEMBER.value)
+    role: Mapped[MemberRole] = mapped_column(SQLEnum(MemberRole), default=MemberRole.MEMBER.value, nullable=False)

@@ -1,10 +1,10 @@
-from database.base import Base
+from app.database.base import Base
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import ForeignKey
 
 class UserLink(Base):
 
-    __tablename__ = "users_links"
+    __tablename__ = "user_links"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     link: Mapped[str]

@@ -1,10 +1,10 @@
-from database.base import Base
+from app.database.base import Base
 from sqlalchemy import ForeignKey, TIMESTAMP, Enum as SQLEnum
 from sqlalchemy.orm import mapped_column, Mapped
 from sqlalchemy.sql.expression import text
 from datetime import date, datetime
-from enum.gender import Gender
-from enum.role import Role
+from app.enum.gender import Gender
+from app.enum.role import Role
 
 class User(Base):
 
@@ -21,7 +21,7 @@ class User(Base):
     about: Mapped[str | None]
     profile_picture_url: Mapped[str | None]
     gender: Mapped[Gender] = mapped_column(SQLEnum(Gender))
-    role: Mapped[Role] = mapped_column(SQLEnum(Role), default=Role.REGULAR.value)
-    city_id: Mapped[int] = mapped_column(ForeignKey("city.id"))
+    role: Mapped[Role] = mapped_column(SQLEnum(Role), default=Role.REGULAR.value, nullable=False)
+    city_id: Mapped[int] = mapped_column(ForeignKey("cities.id"))
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=text('now()'))
     updated_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=text('now()'), onupdate=text('now()'))
