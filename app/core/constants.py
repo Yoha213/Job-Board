@@ -1,0 +1,8 @@
+COUNTRIES_FILE_PATH = "data/countries.json"
+STATES_FILE_PATH = "data/states.json"
+CURRENCIES_FILE_PATH = "data/currencies.json"
+LANGUAGES_FILE_PATH = "data/languages.json"
+PROFESSIONS_FILE_PATH = "data/professions.json"
+CATEGORIES_FILE_PATH = "data/categories.json"
+SUB_CATEGORIES_FILE_PATH = "data/sub_categories.json"
+SKILLS_FILE_PATH = "data/skills.json"

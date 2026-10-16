@@ -13,6 +13,7 @@ class Job(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     company_id: Mapped[int] = mapped_column(ForeignKey("companies.id"), nullable=False)
     company_headquarder_id: Mapped[int] = mapped_column("company_headquarters.id")
+    about: Mapped[str | None]
     title: Mapped[str]
     min_salary: Mapped[int | None]
     max_salary: Mapped[int | None]

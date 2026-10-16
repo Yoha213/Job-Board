@@ -1,0 +1,98 @@
+[
+    {
+        "category": "Education",
+        "id": 1
+    },
+    {
+        "category": "Construction",
+        "id": 2
+    },
+    {
+        "category": "Design",
+        "id": 3
+    },
+    {
+        "category": "Corporate Services",
+        "id": 4
+    },
+    {
+        "category": "Retail",
+        "id": 5
+    },
+    {
+        "category": "Energy & Mining",
+        "id": 6
+    },
+    {
+        "category": "Manufacturing",
+        "id": 7
+    },
+    {
+        "category": "Textiles",
+        "id": 8
+    },
+    {
+        "category": "Finance",
+        "id": 9
+    },
+    {
+        "category": "Recreation & Travel",
+        "id": 10
+    },
+    {
+        "category": "Arts",
+        "id": 11
+    },
+    {
+        "category": "Health Care",
+        "id": 12
+    },
+    {
+        "category": "Hardware & Networking",
+        "id": 13
+    },
+    {
+        "category": "Real Estate",
+        "id": 14
+    },
+    {
+        "category": "Legal",
+        "id": 15
+    },
+    {
+        "category": "Consumer Goods",
+        "id": 16
+    },
+    {
+        "category": "Agriculture",
+        "id": 17
+    },
+    {
+        "category": "Media & Communications",
+        "id": 18
+    },
+    {
+        "category": "Nonprofit",
+        "id": 19
+    },
+    {
+        "category": "Software & IT Services",
+        "id": 20
+    },
+    {
+        "category": "Transportation & Logistics",
+        "id": 21
+    },
+    {
+        "category": "Entertainment",
+        "id": 22
+    },
+    {
+        "category": "Wellness & Fitness",
+        "id": 23
+    },
+    {
+        "category": "Public Safety",
+        "id": 24
+    }
+]

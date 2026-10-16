@@ -1,0 +1,554 @@
+[
+    {
+        "sub_category": "Education Management",
+        "category_id": 1
+    },
+    {
+        "sub_category": "E-Learning",
+        "category_id": 1
+    },
+    {
+        "sub_category": "Higher Education",
+        "category_id": 1
+    },
+    {
+        "sub_category": "Primary/Secondary Education",
+        "category_id": 1
+    },
+    {
+        "sub_category": "Research",
+        "category_id": 1
+    },
+    {
+        "sub_category": "Building Materials",
+        "category_id": 2
+    },
+    {
+        "sub_category": "Civil Engineering",
+        "category_id": 2
+    },
+    {
+        "sub_category": "Construction",
+        "category_id": 2
+    },
+    {
+        "sub_category": "Architecture & Planning",
+        "category_id": 3
+    },
+    {
+        "sub_category": "Design",
+        "category_id": 3
+    },
+    {
+        "sub_category": "Graphic Design",
+        "category_id": 3
+    },
+    {
+        "sub_category": "Accounting",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Business Supplies & Equipment",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Environmental Services",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Events Services",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Executive Office",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Facilities Services",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Human Resources",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Information Services",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Management Consulting",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Outsourcing/Offshoring",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Professional Training & Coaching",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Security & Investigations",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Staffing & Recruiting",
+        "category_id": 4
+    },
+    {
+        "sub_category": "Retail",
+        "category_id": 5
+    },
+    {
+        "sub_category": "Supermarkets",
+        "category_id": 5
+    },
+    {
+        "sub_category": "Wholesale",
+        "category_id": 5
+    },
+    {
+        "sub_category": "Mining & Metals",
+        "category_id": 6
+    },
+    {
+        "sub_category": "Oil & Energy",
+        "category_id": 6
+    },
+    {
+        "sub_category": "Utilities",
+        "category_id": 6
+    },
+    {
+        "sub_category": "Automotive",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Aviation & Aerospace",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Chemicals",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Defense & Space",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Electrical & Electronic Manufacturing",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Food Production",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Glass, Ceramics & Concrete",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Industrial Automation",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Machinery",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Mechanical or Industrial Engineering",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Packaging & Containers",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Paper & Forest Products",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Plastics",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Railroad Manufacture",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Renewables & Environment",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Shipbuilding",
+        "category_id": 7
+    },
+    {
+        "sub_category": "Textiles",
+        "category_id": 8
+    },
+    {
+        "sub_category": "Banking",
+        "category_id": 9
+    },
+    {
+        "sub_category": "Capital Markets",
+        "category_id": 9
+    },
+    {
+        "sub_category": "Financial Services",
+        "category_id": 9
+    },
+    {
+        "sub_category": "Insurance",
+        "category_id": 9
+    },
+    {
+        "sub_category": "Investment Banking",
+        "category_id": 9
+    },
+    {
+        "sub_category": "Investment Management",
+        "category_id": 9
+    },
+    {
+        "sub_category": "Venture Capital & Private Equity",
+        "category_id": 9
+    },
+    {
+        "sub_category": "Airlines/Aviation",
+        "category_id": 10
+    },
+    {
+        "sub_category": "Hospitality",
+        "category_id": 10
+    },
+    {
+        "sub_category": "Leisure, Travel & Tourism",
+        "category_id": 10
+    },
+    {
+        "sub_category": "Restaurants",
+        "category_id": 10
+    },
+    {
+        "sub_category": "Recreational Facilities & Services",
+        "category_id": 10
+    },
+    {
+        "sub_category": "Sports",
+        "category_id": 10
+    },
+    {
+        "sub_category": "Arts & Crafts",
+        "category_id": 11
+    },
+    {
+        "sub_category": "Fine Art",
+        "category_id": 11
+    },
+    {
+        "sub_category": "Performing Arts",
+        "category_id": 11
+    },
+    {
+        "sub_category": "Photography",
+        "category_id": 11
+    },
+    {
+        "sub_category": "Biotechnology",
+        "category_id": 12
+    },
+    {
+        "sub_category": "Hospital & Health Care",
+        "category_id": 12
+    },
+    {
+        "sub_category": "Medical Device",
+        "category_id": 12
+    },
+    {
+        "sub_category": "Medical Practice",
+        "category_id": 12
+    },
+    {
+        "sub_category": "Mental Health Care",
+        "category_id": 12
+    },
+    {
+        "sub_category": "Pharmaceuticals",
+        "category_id": 12
+    },
+    {
+        "sub_category": "Veterinary",
+        "category_id": 12
+    },
+    {
+        "sub_category": "Computer Hardware",
+        "category_id": 13
+    },
+    {
+        "sub_category": "Computer Networking",
+        "category_id": 13
+    },
+    {
+        "sub_category": "Nanotechnologie",
+        "category_id": 13
+    },
+    {
+        "sub_category": "Semiconductors",
+        "category_id": 13
+    },
+    {
+        "sub_category": "Telecommunications",
+        "category_id": 13
+    },
+    {
+        "sub_category": "Wireless",
+        "category_id": 13
+    },
+    {
+        "sub_category": "Commercial Real Estate",
+        "category_id": 14
+    },
+    {
+        "sub_category": "Real Estate",
+        "category_id": 14
+    },
+    {
+        "sub_category": "Alternative Dispute Resolution",
+        "category_id": 15
+    },
+    {
+        "sub_category": "Law Practice",
+        "category_id": 15
+    },
+    {
+        "sub_category": "Legal Services",
+        "category_id": 15
+    },
+    {
+        "sub_category": "Apparel & Fashion",
+        "category_id": 16
+    },
+    {
+        "sub_category": "Consumer Electronics",
+        "category_id": 16
+    },
+    {
+        "sub_category": "Consumer Goods",
+        "category_id": 16
+    },
+    {
+        "sub_category": "Consumer Services",
+        "category_id": 16
+    },
+    {
+        "sub_category": "Cosmetics",
+        "category_id": 16
+    },
+    {
+        "sub_category": "Food & Beverages",
+        "category_id": 16
+    },
+    {
+        "sub_category": "Furniture",
+        "category_id": 16
+    },
+    {
+        "sub_category": "Luxury Goods & Jewelry",
+        "category_id": 16
+    },
+    {
+        "sub_category": "Sporting Goods",
+        "category_id": 16
+    },
+    {
+        "sub_category": "Dairy",
+        "category_id": 17
+    },
+    {
+        "sub_category": "Farming",
+        "category_id": 17
+    },
+    {
+        "sub_category": "Fishery",
+        "category_id": 17
+    },
+    {
+        "sub_category": "Ranching",
+        "category_id": 17
+    },
+    {
+        "sub_category": "Market Research",
+        "category_id": 18
+    },
+    {
+        "sub_category": "Marketing & Advertising",
+        "category_id": 18
+    },
+    {
+        "sub_category": "Newspapers",
+        "category_id": 18
+    },
+    {
+        "sub_category": "Online Media",
+        "category_id": 18
+    },
+    {
+        "sub_category": "Printing",
+        "category_id": 18
+    },
+    {
+        "sub_category": "Public Relations & Communications",
+        "category_id": 18
+    },
+    {
+        "sub_category": "Publishing",
+        "category_id": 18
+    },
+    {
+        "sub_category": "Translation & Localization",
+        "category_id": 18
+    },
+    {
+        "sub_category": "Writing & Editing",
+        "category_id": 18
+    },
+    {
+        "sub_category": "Civic & Social Organization",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Fundraising",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Individual & Family Services",
+        "category_id": 19
+    },
+    {
+        "sub_category": "International Trade & Development",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Libraries",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Museums & Institutions",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Non-Profit Organization Management",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Philanthropy",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Program Development",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Religious Institutions",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Think Tanks",
+        "category_id": 19
+    },
+    {
+        "sub_category": "Computer & Network Security",
+        "category_id": 20
+    },
+    {
+        "sub_category": "Computer Software",
+        "category_id": 20
+    },
+    {
+        "sub_category": "Information Technology & Services",
+        "category_id": 20
+    },
+    {
+        "sub_category": "Internet",
+        "category_id": 20
+    },
+    {
+        "sub_category": "Import & Export",
+        "category_id": 21
+    },
+    {
+        "sub_category": "Logistics & Supply Chain",
+        "category_id": 21
+    },
+    {
+        "sub_category": "Maritime",
+        "category_id": 21
+    },
+    {
+        "sub_category": "Package/Freight Delivery",
+        "category_id": 21
+    },
+    {
+        "sub_category": "Transportation/Trucking/Railroad",
+        "category_id": 21
+    },
+    {
+        "sub_category": "Warehousing",
+        "category_id": 21
+    },
+    {
+        "sub_category": "Animation",
+        "category_id": 22
+    },
+    {
+        "sub_category": "Broadcast Media",
+        "category_id": 22
+    },
+    {
+        "sub_category": "Computer Games",
+        "category_id": 22
+    },
+    {
+        "sub_category": "Entertainment",
+        "category_id": 22
+    },
+    {
+        "sub_category": "Media Production",
+        "category_id": 22
+    },
+    {
+        "sub_category": "Mobile Games",
+        "category_id": 22
+    },
+    {
+        "sub_category": "Motion Pictures & Film",
+        "category_id": 22
+    },
+    {
+        "sub_category": "Music",
+        "category_id": 22
+    },
+    {
+        "sub_category": "Alternative Medicine",
+        "category_id": 23
+    },
+    {
+        "sub_category": "Health, Wellness & Fitness",
+        "category_id": 23
+    },
+    {
+        "sub_category": "Law Enforcement",
+        "category_id": 24
+    },
+    {
+        "sub_category": "Military",
+        "category_id": 24
+    },
+    {
+        "sub_category": "Public Safety",
+        "category_id": 24
+    }
+]

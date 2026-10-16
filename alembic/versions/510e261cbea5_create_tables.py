@@ -1,8 +1,8 @@
 """create tables
 
-Revision ID: dd800dea5ed4
+Revision ID: 510e261cbea5
 Revises: 
-Create Date: 2026-10-15 18:54:19.580064
+Create Date: 2026-10-16 16:30:27.654182
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'dd800dea5ed4'
+revision: str = '510e261cbea5'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -86,13 +86,6 @@ def upgrade() -> None:
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('skill')
     )
-    op.create_table('company_categories',
-    sa.Column('company_id', sa.Integer(), nullable=False),
-    sa.Column('category_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['category_id'], ['categories.id'], ),
-    sa.ForeignKeyConstraint(['company_id'], ['companies.id'], ),
-    sa.PrimaryKeyConstraint('company_id', 'category_id')
-    )
     op.create_table('company_links',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('link', sa.String(), nullable=False),
@@ -127,6 +120,14 @@ def upgrade() -> None:
     sa.ForeignKeyConstraint(['country_id'], ['countries.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    op.create_table('sub_categories',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('sub_category', sa.String(), nullable=False),
+    sa.Column('category_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['category_id'], ['categories.id'], ),
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('sub_category')
+    )
     op.create_table('company_headquarters',
     sa.Column('company_id', sa.Integer(), nullable=False),
     sa.Column('state_id', sa.Integer(), nullable=False),
@@ -134,6 +135,13 @@ def upgrade() -> None:
     sa.ForeignKeyConstraint(['company_id'], ['companies.id'], ),
     sa.ForeignKeyConstraint(['state_id'], ['states.id'], ),
     sa.PrimaryKeyConstraint('company_id', 'state_id')
+    )
+    op.create_table('company_sub_categories',
+    sa.Column('company_id', sa.Integer(), nullable=False),
+    sa.Column('sub_category_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['company_id'], ['companies.id'], ),
+    sa.ForeignKeyConstraint(['sub_category_id'], ['sub_categories.id'], ),
+    sa.PrimaryKeyConstraint('company_id', 'sub_category_id')
     )
     op.create_table('users',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -220,11 +228,12 @@ def downgrade() -> None:
     op.drop_table('company_members')
     op.drop_table('applications')
     op.drop_table('users')
+    op.drop_table('company_sub_categories')
     op.drop_table('company_headquarters')
+    op.drop_table('sub_categories')
     op.drop_table('states')
     op.drop_table('jobs')
     op.drop_table('company_links')
-    op.drop_table('company_categories')
     op.drop_table('skills')
     op.drop_table('professions')
     op.drop_table('link_types')

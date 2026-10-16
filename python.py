@@ -1,32 +1,18 @@
-import csv
 import json
 
-with open("data/currencies.csv", "r", encoding="utf-8") as csvf:
-    data = list(csv.DictReader(csvf))
+with open("data/skills.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
 
-for currency in data:
+skills = []
 
-    currency.pop("Entity")
-    currency.pop("NumericCode")
-    currency.pop("MinorUnit")
-    currency.pop("WithdrawalDate")
-    currency.update({"code":currency.get("AlphabeticCode")})
-    currency.pop("AlphabeticCode")
-    currency.update({"currency":currency.get("Currency")})
-    currency.pop("Currency")
+for skill in data:
 
-for currency in data.copy():
+    skills.append(
+        {
+            "skill": skill.get("keyskill")
+        }
+    )
 
-    if not currency.get("code").strip() or not currency.get("currency").strip():
+with open("data/skills.json", "w", encoding="utf-8") as f:
 
-        data.remove(currency)
-
-currencies = []
-currencies.append(data[0])
-for c1 in data:
-
-    if not any(c2.get("code").lower() == c1.get("code").lower() or c2.get("currency").lower() == c1.get("currency").lower() for c2 in currencies):
-        currencies.append(c1)
-
-with open("data/currencies.json", "w", encoding="utf-8") as jsonf:
-    json.dump(currencies, jsonf, indent=4)
+    json.dump(skills, f, indent=4)

@@ -1,6 +1,7 @@
 from app.database.base import Base
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import ForeignKey, CheckConstraint
+from sqlalchemy import TIMESTAMP, CheckConstraint, func
+from datetime import datetime
 
 class Company(Base):
 
@@ -16,6 +17,8 @@ class Company(Base):
     profile_picture_url: Mapped[str | None]
     min_members: Mapped[int | None]
     max_members: Mapped[int | None]
+    created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now(), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=False), server_default=func.now(), onupdate=func.now(), nullable=False)
 
     # constraint
 
