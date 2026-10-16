@@ -16,7 +16,7 @@ class Job(Base):
     title: Mapped[str]
     min_salary: Mapped[int | None]
     max_salary: Mapped[int | None]
-    currency: Mapped[str] = mapped_column(ForeignKey("currencies.code"))
+    currency_id: Mapped[id] = mapped_column(ForeignKey("currencies.id"))
     employment_type: Mapped[EmploymentType] = mapped_column(SQLEnum(EmploymentType), nullable=False)
     work_location: Mapped[WorkLocation] = mapped_column(SQLEnum(WorkLocation), nullable=False)
     status: Mapped[JobStatus] = mapped_column(SQLEnum(JobStatus), default=JobStatus.OPEN.value, nullable=False)
@@ -26,6 +26,6 @@ class Job(Base):
     # constraints
 
     __table_args__ = (
-        CheckConstraint("(min_salary IS NOT NULL AND max_salary IS NOT NULL AND currency IS NOT NULL AND (min_salary < max_salary)) OR (min_salary IS NULL AND max_salary IS NULL AND currency IS NULL)",
+        CheckConstraint("(min_salary IS NOT NULL AND max_salary IS NOT NULL AND currency_id IS NOT NULL AND (min_salary < max_salary)) OR (min_salary IS NULL AND max_salary IS NULL AND currency_id IS NULL)",
                         name="check_salary"),
     )

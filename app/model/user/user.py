@@ -22,6 +22,6 @@ class User(Base):
     profile_picture_url: Mapped[str | None]
     gender: Mapped[Gender] = mapped_column(SQLEnum(Gender))
     role: Mapped[Role] = mapped_column(SQLEnum(Role), default=Role.REGULAR.value, nullable=False)
-    city_id: Mapped[int] = mapped_column(ForeignKey("cities.id"))
+    state_id: Mapped[int] = mapped_column(ForeignKey("states.id"))
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=text('now()'))
     updated_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=text('now()'), onupdate=text('now()'))

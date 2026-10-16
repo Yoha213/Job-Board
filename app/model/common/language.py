@@ -5,5 +5,6 @@ class Language(Base):
 
     __tablename__ = "languages"
 
-    code: Mapped[str] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    code: Mapped[str] = mapped_column(unique=True, nullable=False)
     language: Mapped[str] = mapped_column(unique=True, nullable=False)

@@ -1,8 +1,8 @@
-"""first-revision
+"""create tables
 
-Revision ID: 8d2c48b4628f
+Revision ID: dd800dea5ed4
 Revises: 
-Create Date: 2026-10-12 22:16:51.156567
+Create Date: 2026-10-15 18:54:19.580064
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '8d2c48b4628f'
+revision: str = 'dd800dea5ed4'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -45,23 +45,27 @@ def upgrade() -> None:
     sa.UniqueConstraint('registered_phone')
     )
     op.create_table('countries',
+    sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('code', sa.String(), nullable=False),
     sa.Column('country', sa.String(), nullable=False),
-    sa.Column('falg_url', sa.String(), nullable=False),
-    sa.PrimaryKeyConstraint('code'),
-    sa.UniqueConstraint('country'),
-    sa.UniqueConstraint('falg_url')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('code'),
+    sa.UniqueConstraint('country')
     )
     op.create_table('currencies',
+    sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('code', sa.String(), nullable=False),
     sa.Column('currency', sa.String(), nullable=False),
-    sa.PrimaryKeyConstraint('code'),
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('code'),
     sa.UniqueConstraint('currency')
     )
     op.create_table('languages',
+    sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('code', sa.String(), nullable=False),
     sa.Column('language', sa.String(), nullable=False),
-    sa.PrimaryKeyConstraint('code'),
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('code'),
     sa.UniqueConstraint('language')
     )
     op.create_table('link_types',
@@ -81,13 +85,6 @@ def upgrade() -> None:
     sa.Column('skill', sa.String(), nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('skill')
-    )
-    op.create_table('cities',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('city', sa.String(), nullable=False),
-    sa.Column('country_code', sa.String(), nullable=False),
-    sa.ForeignKeyConstraint(['country_code'], ['countries.code'], ),
-    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('company_categories',
     sa.Column('company_id', sa.Integer(), nullable=False),
@@ -112,24 +109,31 @@ def upgrade() -> None:
     sa.Column('title', sa.String(), nullable=False),
     sa.Column('min_salary', sa.Integer(), nullable=True),
     sa.Column('max_salary', sa.Integer(), nullable=True),
-    sa.Column('currency', sa.String(), nullable=False),
+    sa.Column('currency_id', sa.Integer(), nullable=False),
     sa.Column('employment_type', sa.Enum('FULL_TIME', 'PART_TIME', 'CONTRACT', 'TEMPORARY', 'INTERNSHIP', 'FREELANCE', 'APPRENTICESHIP', name='employmenttype'), nullable=False),
     sa.Column('work_location', sa.Enum('REMOTE', 'ON_SITE', 'HYBRID', name='worklocation'), nullable=False),
     sa.Column('status', sa.Enum('OPEN', 'CLOSED', name='jobstatus'), nullable=False),
     sa.Column('created_at', sa.TIMESTAMP(timezone=True), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.TIMESTAMP(timezone=True), server_default=sa.text('now()'), nullable=False),
-    sa.CheckConstraint('(min_salary IS NOT NULL AND max_salary IS NOT NULL AND currency IS NOT NULL AND (min_salary < max_salary)) OR (min_salary IS NULL AND max_salary IS NULL AND currency IS NULL)', name='check_salary'),
+    sa.CheckConstraint('(min_salary IS NOT NULL AND max_salary IS NOT NULL AND currency_id IS NOT NULL AND (min_salary < max_salary)) OR (min_salary IS NULL AND max_salary IS NULL AND currency_id IS NULL)', name='check_salary'),
     sa.ForeignKeyConstraint(['company_id'], ['companies.id'], ),
-    sa.ForeignKeyConstraint(['currency'], ['currencies.code'], ),
+    sa.ForeignKeyConstraint(['currency_id'], ['currencies.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('states',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('state', sa.String(), nullable=False),
+    sa.Column('country_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['country_id'], ['countries.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('company_headquarters',
     sa.Column('company_id', sa.Integer(), nullable=False),
-    sa.Column('city_id', sa.Integer(), nullable=False),
+    sa.Column('state_id', sa.Integer(), nullable=False),
     sa.Column('location_url', sa.String(), nullable=True),
-    sa.ForeignKeyConstraint(['city_id'], ['cities.id'], ),
     sa.ForeignKeyConstraint(['company_id'], ['companies.id'], ),
-    sa.PrimaryKeyConstraint('company_id', 'city_id')
+    sa.ForeignKeyConstraint(['state_id'], ['states.id'], ),
+    sa.PrimaryKeyConstraint('company_id', 'state_id')
     )
     op.create_table('users',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -144,10 +148,10 @@ def upgrade() -> None:
     sa.Column('profile_picture_url', sa.String(), nullable=True),
     sa.Column('gender', sa.Enum('Male', 'FEMALE', name='gender'), nullable=False),
     sa.Column('role', sa.Enum('ADMIN', 'REGULAR', name='role'), nullable=False),
-    sa.Column('city_id', sa.Integer(), nullable=False),
+    sa.Column('state_id', sa.Integer(), nullable=False),
     sa.Column('created_at', sa.TIMESTAMP(timezone=True), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.TIMESTAMP(timezone=True), server_default=sa.text('now()'), nullable=False),
-    sa.ForeignKeyConstraint(['city_id'], ['cities.id'], ),
+    sa.ForeignKeyConstraint(['state_id'], ['states.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('registered_email'),
     sa.UniqueConstraint('registered_phone'),
@@ -173,11 +177,11 @@ def upgrade() -> None:
     )
     op.create_table('user_languages',
     sa.Column('user_id', sa.Integer(), nullable=False),
-    sa.Column('language_code', sa.String(), nullable=False),
+    sa.Column('language_id', sa.Integer(), nullable=False),
     sa.Column('level', sa.Enum('Beginner', 'INTERMEDIATE', 'ADVANCED', name='level'), nullable=False),
-    sa.ForeignKeyConstraint(['language_code'], ['languages.code'], ),
+    sa.ForeignKeyConstraint(['language_id'], ['languages.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
-    sa.PrimaryKeyConstraint('user_id', 'language_code')
+    sa.PrimaryKeyConstraint('user_id', 'language_id')
     )
     op.create_table('user_links',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -217,10 +221,10 @@ def downgrade() -> None:
     op.drop_table('applications')
     op.drop_table('users')
     op.drop_table('company_headquarters')
+    op.drop_table('states')
     op.drop_table('jobs')
     op.drop_table('company_links')
     op.drop_table('company_categories')
-    op.drop_table('cities')
     op.drop_table('skills')
     op.drop_table('professions')
     op.drop_table('link_types')
